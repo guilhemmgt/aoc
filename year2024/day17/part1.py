@@ -8,7 +8,7 @@ class Context:
     output = []
 
 def adv(n, ctx):
-    ctx.ra = int(ctx.ra/(2**combo(n, ctx)))
+    ctx.ra = ctx.ra//(2**combo(n, ctx))
     ctx.pointer += 2
     return ctx
 def bxl(n, ctx):
@@ -34,11 +34,11 @@ def out(n, ctx):
     ctx.pointer += 2
     return ctx
 def bdv(n, ctx):
-    ctx.rb = int(ctx.ra/(2**combo(n, ctx)))
+    ctx.rb = ctx.ra//(2**combo(n, ctx))
     ctx.pointer += 2
     return ctx
 def cdv(n, ctx):
-    ctx.rc = int(ctx.ra/(2**combo(n, ctx)))
+    ctx.rc = ctx.ra//(2**combo(n, ctx))
     ctx.pointer += 2
     return ctx
 
@@ -83,7 +83,7 @@ def main():
         res += str(n) + ','
     res = res[:-1]
         
-    print(res)
+    print('res:', res)
     
 if __name__ == '__main__':
     main()
